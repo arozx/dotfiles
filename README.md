@@ -1,20 +1,28 @@
 # What is this
-This repo contains both scripts & dotfile for GNU/Linux. Currently using a <u>[Arch Linux](archlinux.org)</u> system. If you use a different distrobution some of this repos contents may not be relevant to you.
+This repo contains both scripts & dotfiles for a GNU/Linux operating system. Currently using [Arch Linux](archlinux.org). If you use a different distro some of this repos contents may not be relevant to you.
 
-__Note__ dotfiles are configurate files for a program/application, scripts are peices of code that automate tasks.
+__Note__ dotfiles are configurate files for a program/application, scripts are code that automate tasks.
 
 ## [Contents](#contents)
-The docs are split into two main parts, [dotfiles](#dotfiles) and [scripts](#scripts).  
+The docs are split into a few parts [Suckless](#suckless), [Scripts](#scripts), [Config](#config), and [Wallpaper](#wallpaper).
 
-## Dotfiles:
+# Installing
 
-### [Fish](https://fishshell.com/)
+Run `chmod +x install.sh` to make the install script executable then run `./install.sh` to run. 
 
-[This](~/dotfiles/config/fish) is my full configuration for Fish. To use my configuration for Fish you need to have <u>[ohmy-fish](https://github.com/oh-my-fish/oh-my-fish)</u> installed due to the theming I use and other features the framework provides. The config files can be found [here](~/dotfiles/config/fish).
+# Contents
 
-### [Alacritty](alacritty.org)
+## Programs
 
-[Alacritty](alacritty) is a terminal emulator with extensive customisation. This dotfile requires Alacritty to be installed. To install this config simpily move the [alacritty.yml](dotfiles/alacritty.yml) to __~/.config/alacritty/alacritty.yml__ using the `mv` command or alternately copy it using the `cp` command the the above mentioned path.
+The installed programs can be foun by reading the [Install file](install.sh). The script also copies wallpapers into a wallpapers directory by default (you can comment this out in the install.sh).
+
+# Custom configs
+
+- Fish
+- Alacritty
+- Xbindkeys
+- Wallpapers
+- Dwm
 
 ## Scripts:
 

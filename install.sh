@@ -36,7 +36,9 @@ sudo pacman -S --noconfirm --needed xorg xorg-xinit\
     flatpak \
     flameshot \
     pamixer \
-    opendoas
+    opendoas \
+    feh
+
 
 # Install rust & alacritty
 echo "##############################"
@@ -60,11 +62,18 @@ mkdir alacritty
 mkdir rofi
 mkdir fish
 mkdir wallpaper
-
 cd ..
+
+# autostart
+cp dotfiles/config/.xprofile .
+
+# set wallpaper
+feh --bg-scale .config/wallpaper/nature-39-1920x1080.jpg
+
+
 cp dotfiles/config/rofi/config.rasi .config/rofi/
 cp dotfiles/config/rofi/launcher.rasi .config/rofi/
-cp dotfiles/config/.xbindkeysrc .xbindkeysrc
+cp dotfiles/config/.xbindkeysrc .
 cp dotfiles/config/fish .config/fish
 
 # scripts
@@ -77,10 +86,18 @@ chmod +x scripts/dwm_bar.sh/
 
 cp -r dotfiles/wallpapers/ .config/wallpaper/
 
-# suckless
+# dwm
 cp -r dotfiles/suckless/ .
-cd suckless
+cd suckless/dwm
 sudo make & sudo make install
+cd ..
+cd ..
+
+# herbe
+git clone https://github.com/dudik/herbe
+cd herbe
+sudo make install
+cd ..
 
 # Interactive
 # Neovim install & config
