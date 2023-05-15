@@ -1,6 +1,10 @@
 #!/bin/usr/sh
 
-cd /home/user/
+# Change this to your username
+username="user";
+
+# Change to home directory
+cd /home/"$username"
 
 # Update pacman
 echo "Updating pacman, will probably take some time"
@@ -64,7 +68,7 @@ mkdir fish
 mkdir wallpaper
 cd ..
 
-# autostart
+# Copy autostart to users home directory
 cp dotfiles/config/.xprofile .
 
 # set wallpaper

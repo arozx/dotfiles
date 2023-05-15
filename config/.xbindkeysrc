@@ -8,23 +8,23 @@
 # The pound(#) symbol may be used anywhere for comments.
 #
 # A list of keys is in /usr/include/X11/keysym.h and in
-# /usr/include/X11/keysymdef.h
-# The XK_ is not needed.
+# /usr/include/X11/keysymdef.h 
+# The XK_ is not needed. 
 #
-# List of modifier (on my keyboard):
-#   Control, Shift, Mod1 (Alt), Mod2 (NumLock),
-#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+# List of modifier (on my keyboard): 
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock), 
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll). 
 #
-# Another way to specifie a key is to use 'xev' and set the
-# keycode with c:nnn or the modifier with m:nnn where nnn is
-# the keycode or the state returned by xev
+# Another way to specifie a key is to use 'xev' and set the 
+# keycode with c:nnn or the modifier with m:nnn where nnn is 
+# the keycode or the state returned by xev 
 #
-# This file is created by xbindkey_config
-# The structure is :
-# # Remark
-# "command"
-# m:xxx + c:xxx
-# Shift+...
+# This file is created by xbindkey_config 
+# The structure is : 
+# # Remark 
+# "command" 
+# m:xxx + c:xxx 
+# Shift+... 
 
 
 
@@ -38,72 +38,72 @@
 #Arch Wiki
 "~/scripts/arch_wiki.sh"
     m:0x18 + c:38
-    Alt+Mod2 + a
+    Alt+Mod2 + a 
 
-#Alacritty
-"alacritty"
+#Terminal
+"st"
     m:0x1c + c:28
-    Control+Alt+Mod2 + t
+    Control+Alt+Mod2 + t 
 
 #System Monitor
-"alacritty --hold -e gotop"
+"st -e gotop"
     m:0x15 + c:9
-    Control+Shift+Mod2 + Escape
+    Control+Shift+Mod2 + Escape 
 
 #Bookmarks
 "~/scripts/bm.sh"
     m:0x18 + c:56
-    Alt+Mod2 + b
+    Alt+Mod2 + b 
 
 #File Manager
 "pcmanfm"
-    m:0x18 + c:26
-    Alt+Mod2 + e
+    m:0x50 + c:26
+    Mod2+Mod4 + e 
 
 #Firefox
 "firefox"
     m:0x18 + c:41
-    Alt+Mod2 + f
+    Alt+Mod2 + f 
 
 #Rofi Launcher
 "rofi -show drun"
     m:0x50 + c:49
-    Mod2+Mod4 + grave
+    Mod2+Mod4 + grave 
 
 #NetworkManager
 "networkmanager_dmenu"
     m:0x18 + c:51
-    Alt+Mod2 + numbersign
+    Alt+Mod2 + numbersign 
 
 #Brightness UP
-"brightnessctl set +5% & herbe "$(brightnessctl g)" & sleep 2 & pkill -SIGUSR1 herbe"
+"~/brightness_change.sh -i"
     m:0x10 + c:233
-    Mod2 + XF86MonBrightnessUp
+    Mod2 + XF86MonBrightnessUp 
 
 #Brightness Dowm
-"brightnessctl set 5%- & herbe "$(brightnessctl g)" & sleep 2 & pkill -SIGUSR1 herbe"
+"~/brightness_change.sh -d"
     m:0x10 + c:232
-    Mod2 + XF86MonBrightnessDown
+    Mod2 + XF86MonBrightnessDown 
 
 #Screenshot
 "flameshot gui"
     m:0x14 + c:107
-    Control+Mod2 + Print
+    Control+Mod2 + Print 
 
 #Volume up
-"pamixer -i 5 & herbe "$(pamixer --get-volume)" &  sleep 2 & pkill -SIGUSR1 herbe   "
+"~/volume_change.sh -i"
     m:0x10 + c:123
-    Mod2 + XF86AudioRaiseVolume
+    Mod2 + XF86AudioRaiseVolume 
 
 #Volume Down
-"pamixer -d 5 & herbe "$(pamixer --get-volume)" & sleep 2 & pkill -SIGUSR1 herbe   "
+"~/volume_change.sh -d"
     m:0x10 + c:122
-    Mod2 + XF86AudioLowerVolume
+    Mod2 + XF86AudioLowerVolume 
 
 #Toggle Volume Mute
-"pamixer -t & herbe "$(pamixer --get-volume-human)" & sleep 2 & pkill -SIGUSR1 herbe"
+"pamixer -t & herbe "$(pamixer --get-volume-human)" & sleep 1 & pkill -SIGUSR1 herbe"
     m:0x10 + c:121
-    Mod2 + XF86AudioMute
+    Mod2 + XF86AudioMute 
 
 #
 # End of xbindkeys configuration
