@@ -76,12 +76,12 @@
     Alt+Mod2 + numbersign 
 
 #Brightness UP
-"~/brightness_change.sh -i"
+"~/scripts/brightness_change.sh -i"
     m:0x10 + c:233
     Mod2 + XF86MonBrightnessUp 
 
 #Brightness Dowm
-"~/brightness_change.sh -d"
+"~/scripts/brightness_change.sh -d"
     m:0x10 + c:232
     Mod2 + XF86MonBrightnessDown 
 
@@ -91,12 +91,12 @@
     Control+Mod2 + Print 
 
 #Volume up
-"~/volume_change.sh -i"
+"~/scripts/volume_change.sh -i"
     m:0x10 + c:123
     Mod2 + XF86AudioRaiseVolume 
 
 #Volume Down
-"~/volume_change.sh -d"
+"~/scripts/volume_change.sh -d"
     m:0x10 + c:122
     Mod2 + XF86AudioLowerVolume 
 
