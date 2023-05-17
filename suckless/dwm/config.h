@@ -7,12 +7,12 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=12", "Symbols Nerd Font:size=12:antialias=true:autohint=true" };
 static const char dmenufont[]       = "monospace:size=11";
 
-static const char normbordercolor[] = "#222222";
-static const char normbgcolor[]     = "#21222C";
-static const char normfgcolor[]     = "#f8f8f2";
-static const char selbordercolor[]  = "#eeeeee";
-static const char selbgcolor[]      = "#005577";
-static const char selfgcolor[]      = "#770000";
+static const char normbordercolor[] = "#1a1b26";
+static const char normbgcolor[]     = "#24283b";
+static const char normfgcolor[]     = "#a9b1d6";
+static const char selbordercolor[]  = "#9aa5ce";
+static const char selbgcolor[]      = "#24283b";
+static const char selfgcolor[]      = "#ff9e64";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
