@@ -4,7 +4,7 @@
 username="user";
 
 # Change to home directory
-cd /home/"$username"
+cd /home/$username;
 
 # Update pacman
 echo "Updating pacman, will probably take some time"
