@@ -101,7 +101,7 @@
     Mod2 + XF86AudioLowerVolume 
 
 #Toggle Volume Mute
-"pamixer -t & herbe "$(pamixer --get-volume-human)" & sleep 1 & pkill -SIGUSR1 herbe"
+"amixer sset Master toggle & sleep 0.1 & herbe "$(amixer sget Master)" & sleep 1 & pkill -SIGUSR1 herbe"
     m:0x10 + c:121
     Mod2 + XF86AudioMute 
 

@@ -1,7 +1,9 @@
 #!/usr/bin/sh
 
-# dependacies: dmenu, arch-wiki-docs[AUR]
+# Description: Search ofline arch wiki
+# Dependacies: dmenu, arch-wiki-docs
 
+# throw errors if theres and issue
 set -euo pipefail
 
 BROWSER="firefox"
