@@ -1,47 +1,43 @@
-# Change this depending on battery in /sys/class/power_supply/
-battery="BATT";
+# Change this depending on the battery in /sys/class/power_supply/
+battery="BATT"
+
 has_battery() {
-    if [ -d /sys/class/power_supply/$battery ]; then
-        return 0;
+    if [ -d "/sys/class/power_supply/$battery" ]; then
+        return 0
     fi
-    return 1;
+    return 1
 }
 
-get_battery_status() {
-    charge="$(get_charge)"
-    echo ""$icon" "$charge"%"
-}
+get_status() {
+    charging=""
+    acpi | grep -q "Charging" && charging="" || charging=""
 
-get_charging_status() {
-    cat "/sys/class/power_supply/$battery/status"
-}
+    ping -c 1 "8.8.8.8" > /dev/null 2>&1 && ping="󰖩" || ping="󱚼"
 
-get_charge() {
-    cat "/sys/class/power_supply/$battery/capacity"
+    brightness=$(get_brightness)
+    charge=$(cat "/sys/class/power_supply/$battery/capacity")"%"
+    echo "$charging$charge |$ping |$brightness |$(get_datetime)"
 }
 
 get_datetime() {
     date +" %a %d %b %Y | 🕓 %I:%M %p %Z"
 }
 
-get_status() {
-    battery_status="";
-    if $(has_battery); then
-        battery_status=" $(get_battery_status) |";
-    fi
-
-    echo "$(get_brightness) |${battery_status} $(get_datetime)";
-}
-
 get_brightness() {
-    cat "/sys/class/backlight/amdgpu_bl0/brightness"
+    brightness=$(cat "/sys/class/backlight/amdgpu_bl0/brightness")
+    brightness=$((brightness * 100 / 255))
+    echo $brightness
 }
 
-while true
-do
-    xsetroot -name "$(get_status)";
-    sleep 0.1s;
+get_volume() {
+    amixer get Master | grep -oE "[0-9]+%" | sort -u
+}
+
+while true; do
+    xsetroot -name "$(get_status)"
+    sleep 1s
 done &
+
 
 # autostart
 ~/.fehbg &

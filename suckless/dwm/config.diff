@@ -1,0 +1,51 @@
+1,2c1
+< 
+---
+> #include <X11/XF86keysym.h>
+8,14c7,16
+< static const char *fonts[]          = { "monospace:size=10" };
+< static const char dmenufont[]       = "monospace:size=10";
+< static const char col_gray1[]       = "#222222";
+< static const char col_gray2[]       = "#444444";
+< static const char col_gray3[]       = "#bbbbbb";
+< static const char col_gray4[]       = "#eeeeee";
+< static const char col_cyan[]        = "#005577";
+---
+> static const char *fonts[]          = { "monospace:size=12", "Symbols Nerd Font:size=12:antialias=true:autohint=true" };
+> static const char dmenufont[]       = "monospace:size=11";
+> 
+> static const char normbordercolor[] = "#1a1b26";
+> static const char normbgcolor[]     = "#24283b";
+> static const char normfgcolor[]     = "#a9b1d6";
+> static const char selbordercolor[]  = "#9aa5ce";
+> static const char selbgcolor[]      = "#24283b";
+> static const char selfgcolor[]      = "#ff9e64";
+> 
+17,19c19,22
+< 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+< 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+< };
+---
+> 	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+> 	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+> };	
+> 
+21a25,26
+> // static const char *tags[] = { "", "", "3", "", "5", "6", "7", "8", "9" };
+> //static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+22a28
+> /* static const char *alttags[] = { " HOME", " WEB", " MUSIC", " CODE", " EDIT", " GAME", " OFFICE", " MISC", " HMM" }; */
+31c37
+< 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+---
+> 	{ "firefox",  NULL,       NULL,       0,       	    0,           -1 },
+48c54
+< #define MODKEY Mod1Mask
+---
+> #define MODKEY Mod4Mask
+59c65
+< static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+---
+> static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normbordercolor, "-sb", normbgcolor, "-sf", normbgcolor, NULL };
+65d70
+< 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
