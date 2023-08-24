@@ -62,8 +62,8 @@
 
 #Firefox
 "firefox"
-    m:0x18 + c:41
-    Alt+Mod2 + f 
+    m:0x18 + c:53
+    Alt+Mod2 + x 
 
 #Rofi Launcher
 "rofi -show drun"
@@ -101,9 +101,14 @@
     Mod2 + XF86AudioLowerVolume 
 
 #Toggle Volume Mute
-"amixer sset Master toggle & sleep 0.1 & herbe "$(amixer sget Master)" & sleep 1 & pkill -SIGUSR1 herbe"
+"pamixer -t & sleep 0.1 & herbe "$(amixer sget Master)" & sleep 1 & pkill -SIGUSR1 herbe"
     m:0x10 + c:121
     Mod2 + XF86AudioMute 
+
+#Airpods Pause
+"playerctl -p playerctld play-pause"
+    m:0x10 + c:208
+    Mod2 + XF86AudioPlay 
 
 #
 # End of xbindkeys configuration
