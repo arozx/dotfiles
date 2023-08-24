@@ -1,31 +1,90 @@
-# What is this
-This repo contains both scripts & dotfiles for a GNU/Linux operating system. Currently using [Arch Linux](archlinux.org). If you use a different distro some of this repos contents may not be relevant to you.
+<div>
+<a name="readme-top"></a>
 
-__Note__ dotfiles are configurate files for a program/application, scripts are code that automate tasks.
+<br />
+<h3 align="center">Dotfiles</h3>
+  <p align="center"><br>
+    This repo contains both scripts and dotfiles for a GNU/Linux operating system tested on <a href="https://archlinux.org">Arch Linux.</a>
+    <br />
+    <a href="https://github.com/arozx/dotfiles"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://github.com/arozx/dotfiles/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/arozx/dotfiles/issues">Request Feature</a>
+  </p>
+</div>
 
-## [Contents](#contents)
-The docs are split into a few parts [Suckless](#suckless), [Scripts](#scripts), [Config](#config), and [Wallpaper](#wallpaper).
 
-# Installing
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-Run `chmod +x install.sh` to make the install script executable then run `./install.sh` to run. 
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-# Contents
-
-## Programs
-
-The installed programs can be foun by reading the [Install file](install.sh). The script also copies wallpapers into a wallpapers directory by default (you can comment this out in the install.sh).
-
-# Custom configs
-
+This project contains, wallpapers, scripts and  custom configurations for the following programs:
 - Fish
 - Alacritty
 - Xbindkeys
 - Wallpapers
 - Dwm
+- ST
+- Neovim
 
-## Scripts:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### [Arch Wiki](scripts/arch_wiki.sh)
 
-This script requires you to have <u>[dmenu](https://wiki.archlinux.org/title/Dmenu)</u> & <u>[arch-wiki-docs](https://archlinux.org/packages/community/any/arch-wiki-docs/)</u> installed. It works by creating a menu were the user enter thier search query in __dmenu__, then using the repository of arch wiki pages provided in the __arch-wiki-docs__ AUR package it displays the uses chosen wiki page in thier browser as defined in the `BROWSER` variable.
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Installation
+
+Clone the github repo by running
+
+```sh
+git clone https://arozx/dotfiles.git
+```
+
+You may need to modify some of the scripts to use your chosen browser. The default browser is firefox.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- USAGE -->
+## Usage
+
+You can chose to manualy install the configuraions or use the install.sh script.
+
+```sh
+sudo ./install.sh
+```
+
+<!-- LICENSE -->
+## License
+
+Distributed under the BSD-3-CLAUSE License. See [LICENSE](./LICENSE) for more information.
+
+
+<!-- CONTACT -->
+## Contact
+
+Mastodon - [arozx@infosec.exchange](https://infosec.exchange/@arozx)
+
+Email - github@arozx.tech
+
+Project Link: [https://github.com/arozx/dotfiles](https://github.com/arozx/dotfiles)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
