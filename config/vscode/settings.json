@@ -1,0 +1,44 @@
+{
+    "workbench.startupEditor": "none",
+    "editor.inlineSuggest.enabled": true,
+    "git.enableSmartCommit": true,
+    "workbench.colorTheme": "Tokyo Night Storm",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "window.zoomLevel": 1,
+    "redhat.telemetry.enabled": false,
+    "extensions.ignoreRecommendations": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter", 
+        "diffEditor.ignoreTrimWhitespace": false,
+        "gitlens.codeLens.symbolScopes": [
+            "!Module"
+        ],
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": false
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "dart.openDevTools": "flutter",
+    "explorer.confirmDragAndDrop": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.confirmDelete": false
+}

@@ -44,6 +44,7 @@ This project contains, wallpapers, scripts and  custom configurations for the fo
 - Dwm
 - ST
 - Neovim
+- VSCode
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
