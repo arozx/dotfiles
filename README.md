@@ -39,7 +39,6 @@
 This project contains, wallpapers, scripts and  custom configurations for the following programs:
 - Fish
 - Alacritty
-- Xbindkeys
 - Wallpapers
 - Dwm
 - ST

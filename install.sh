@@ -30,12 +30,8 @@ sudo pacman -S --noconfirm --needed xorg xorg-xinit\
     lf				    \
     gotop			    \
     arch-wiki-docs  \
-    xbindkeys   \
-    xbindkeys_config \
     tcc \
     dmenu \
-    rofi \
-    dmenu-rofi \
     neovim \
     flatpak \
     flameshot \
@@ -53,9 +49,7 @@ sudo pacman -S --noconfirm --needed rustup cargo
 rustup default stable
 
 sudo pacman -S --noconfirm --needed alacritty
-yay -S --noconfirm --needed archlinux-tweak-tool-git
 yay -S --noconfirm --needed brave-bin
-yay -S --noconfirm --needed vscodium-bin 
 
 mkdir .config
 mkdir scripts
@@ -77,15 +71,11 @@ feh --bg-scale .config/wallpaper/nature-39-1920x1080.jpg
 
 cp dotfiles/config/rofi/config.rasi .config/rofi/
 cp dotfiles/config/rofi/launcher.rasi .config/rofi/
-cp dotfiles/config/.xbindkeysrc .
 cp dotfiles/config/fish .config/fish
 
 # scripts
 cp -r dotfiles/scripts scripts
-chmod +x scripts/arch_wiki.sh/
-chmod +x scripts/bookmarks.sh/
-chmod +x scripts/todo.sh/
-chmod +x scripts/dwm_bar.sh/
+chmod +x scripts/*
 
 
 cp -r dotfiles/wallpapers/ .config/wallpaper/
@@ -105,9 +95,9 @@ cd ..
 
 # Interactive
 # Neovim install & config
-echo "###########################"
-echo "installing astro vim config"
-echo "###########################"
+echo "########################"
+echo "Installing neovim config"
+echo "########################"
 
 # Nerdfonts
 yay -S --noconfirm --needed nerd-fonts-git
@@ -117,11 +107,3 @@ yay -S --noconfirm --needed neovim
 
 # Tree sitter
 cargo install tree-sitter-cli
-
-# Clone astrovim repo
-git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-nvim
-
-echo "##################################"
-echo "navigate to https://astronvim.com/"
-echo "##################################"

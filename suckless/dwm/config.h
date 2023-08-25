@@ -1,4 +1,5 @@
-#include <X11/XF86keysym.h>
+/* See LICENSE file for copyright and license details. */
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -6,26 +7,26 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=12", "Symbols Nerd Font:size=12:antialias=true:autohint=true" };
 static const char dmenufont[]       = "monospace:size=11";
-
-static const char normbordercolor[] = "#1a1b26";
-static const char normbgcolor[]     = "#24283b";
-static const char normfgcolor[]     = "#a9b1d6";
-static const char selbordercolor[]  = "#9aa5ce";
-static const char selbgcolor[]      = "#24283b";
-static const char selfgcolor[]      = "#ff9e64";
-
+static const char col_gray1[]       = "#222222";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
+static const unsigned int baralpha = 0xd0;
+static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
-};	
-
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+};
+static const unsigned int alphas[][3]      = {
+    /*               fg      bg        border*/
+    [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+};
 
 /* tagging */
-// static const char *tags[] = { "", "", "3", "", "5", "6", "7", "8", "9" };
-//static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-/* static const char *alttags[] = { " HOME", " WEB", " MUSIC", " CODE", " EDIT", " GAME", " OFFICE", " MISC", " HMM" }; */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -34,7 +35,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",  NULL,       NULL,       0,       	    0,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -51,7 +52,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -62,11 +63,45 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normbordercolor, "-sb", normbgcolor, "-sf", normbgcolor, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+
+
+
+/* commands */
+
+static const char *termcmd[]  = { "st", NULL };
+static const char *browser[]  = { "firefox", NULL };
+static const char *rofi[]  = { "rofi", "-show", "drun", NULL };
+static const char *screenshot[] = { "flameshot", "gui", NULL };
+static const char *airpods_pause[] = { "playerctl", "-p", "playerctld", "play-pause", NULL };
+static const char *system_monitor[] = { "st", "-e", "gotop", NULL };
 
 static const Key keys[] = {
-	/* modifier                     key        function        argument */
+	/* modifier                     	key        			function        argument */
+
+	/* ALT = Mod1Mask */
+	/* SUPER = Mod4Mask */
+
+	{ Mod4Mask,         			XK_f,      			spawn,          {.v = browser } },
+	{ Mod4Mask,		         	XK_v,      			spawn,          SHCMD ("pavucontrol-qt") },
+	{ Mod4Mask, 		        	XK_c,      			spawn,          SHCMD ("code") },
+	{ Mod1Mask|ShiftMask,           	XK_a,      			spawn,          SHCMD ("~/scripts/arch_wiki.sh") },
+    	{ ControlMask|Mod1Mask|Mod2Mask,	XK_t,      			spawn,          {.v = termcmd } },
+    	{ ControlMask|ShiftMask|Mod2Mask,	XK_Escape, 			spawn,          {.v = system_monitor } },
+    	{ Mod1Mask|ShiftMask,            	XK_b,      			spawn,          SHCMD ("~/scripts/bm.sh") },
+    	{ Mod2Mask|Mod4Mask,            	XK_grave,  			spawn,          {.v = rofi } },
+    	{ Mod1Mask|Mod2Mask,            	XK_numbersign, 			spawn,     	SHCMD ("networkmanager_dmenu") },
+    	{ Mod2Mask,                    		0x1008ff03, 			spawn, 		SHCMD ("~/scripts/brightness_change.sh -d") },
+    	{ Mod2Mask,                    		0x1008ff02,		 	spawn, 		SHCMD ("~/scripts/brightness_change.sh -i") },
+    	{ ControlMask|Mod2Mask,        		XK_Print,  			spawn,          {.v = screenshot } },
+   	{ Mod2Mask,                    		0x1008FF13, 			spawn, 		SHCMD ("~/scripts/volume_change.sh -i") },
+    	{ Mod2Mask,                    		0x1008FF11,	 		spawn, 		SHCMD ("~/scripts/volume_change.sh -d") },
+    	{ Mod2Mask,                    		0x1008FF12, 			spawn,   	SHCMD ("~/scripts/volume_change.sh -m") },
+    	{ Mod2Mask,                    		0x1008FF14, 			spawn,   	{.v = airpods_pause } },
+	{ Mod4Mask,				XK_w,				spawn,		SHCMD ("~/scripts/wallpaper_change.sh -r") },
+	{ Mod4Mask,				XK_?,				spawn,		SHCMD ("~/scripts/list_keybinds.sh -a") },
+
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

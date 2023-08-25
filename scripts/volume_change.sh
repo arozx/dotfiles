@@ -4,19 +4,29 @@ case $1 in
 
 # Increase volume
     -i)
-    	amixer sset Master 5%+
+        pamixer -i 5
 	sleep 0.01
-	herbe "$(amixer sget Master)"
-	sleep 0.3
+	herbe "$(pamixer --get-volume)"
+	sleep 0.1
 	pkill -SIGUSR1 herbe
     	;;
 
 # Decrease volume.
     -d)
-	amixer sset Master 5%-
+	pamixer -d 5
 	sleep 0.01
-	herbe "$(amixer sget Master)"
-	sleep 0.3
+	herbe "$(pamixer --get-volume)"
+	sleep 0.1
 	pkill -SIGUSR1 herbe
 	;;
+
+# Mute volume.
+    -m)
+    pamixer -t
+    sleep 0.01
+    herbe "$(pamixer --get-volume)"
+    sleep 0.1
+    pkill -SIGUSR1 herbe
+    ;;	
+
 esac

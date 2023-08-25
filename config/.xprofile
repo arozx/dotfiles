@@ -12,7 +12,7 @@ get_status() {
     charging=""
     acpi | grep -q "Charging" && charging="" || charging=""
 
-    ping -c 1 "8.8.8.8" > /dev/null 2>&1 && ping="󰖩" || ping="󱚼"
+    ping -c 1 "8.8.8.8" > /dev/null 2>&1 && ping="󰖩" || ping="󰤮"
 
     brightness=$(get_brightness)
     charge=$(cat "/sys/class/power_supply/$battery/capacity")"%"
@@ -30,7 +30,7 @@ get_brightness() {
 }
 
 get_volume() {
-    amixer get Master | grep -oE "[0-9]+%" | sort -u
+    pamixer --get-volume-human
 }
 
 while true; do
@@ -41,4 +41,3 @@ done &
 
 # autostart
 ~/.fehbg &
-xbindkeys
