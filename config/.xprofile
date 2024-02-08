@@ -35,7 +35,7 @@ get_volume() {
 
 while true; do
     xsetroot -name "$(get_status)"
-    sleep 1s
+    sleep 0.5s
 done &
 
 
