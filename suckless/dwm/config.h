@@ -76,6 +76,8 @@ static const char *rofi[]  = { "rofi", "-show", "drun", NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
 static const char *airpods_pause[] = { "playerctl", "-p", "playerctld", "play-pause", NULL };
 static const char *system_monitor[] = { "st", "-e", "gotop", NULL };
+static const char *monitor_off[] = { "xrandr", "--output", "HDMI-A-0", "--off", NULL };
+static const char *monitor_on[] = { "xrandr", "--output", "HDMI-A-0", "--auto", "--above", "eDP", NULL };
 
 static const Key keys[] = {
 	/* modifier                     	key        			function        argument */
@@ -100,7 +102,10 @@ static const Key keys[] = {
     	{ Mod2Mask,                    		0x1008FF12, 			spawn,   	SHCMD ("~/scripts/volume_change.sh -m") },
     	{ Mod2Mask,                    		0x1008FF14, 			spawn,   	{.v = airpods_pause } },
 	{ Mod4Mask,				XK_w,				spawn,		SHCMD ("~/scripts/wallpaper_change.sh -r") },
-	{ Mod4Mask,				XK_?,				spawn,		SHCMD ("~/scripts/list_keybinds.sh -a") },
+	{ Mod4Mask,				XK_Return,			spawn,		SHCMD ("~/scripts/list_keybinds.sh -a") },
+	{ Mod4Mask, 				XK_n,				spawn,		{.v = monitor_off } },
+	{ Mod4Mask,				XK_m,				spawn,		{.v = monitor_on } },
+	
 
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
