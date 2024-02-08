@@ -22,6 +22,8 @@ Super-grave:          Rofi
 Alt-hash:             Network Manager
 Ctrl-print:           Flameshot
 Super-w:              Random Wallpaper
+Super-n:              Monitor off
+Super-m:              Monitor on
 
 Alt-p:                Dmenu
 Alt-b:                Toggle Bar
@@ -36,6 +38,8 @@ Alt-Tab:              Toggle Between Two Most Recent Tags
 Alt-0:                View All Tags
 Alt-number:           View Tag Number
 Alt-Shift-number:     Tag Focused Window with Tag Number
+Alt-Shift-comma:      Send Focused Window to Previous Screen
+Alt-Shift-period:     Send Focused Window to Next Screen
 Alt-Shift-c:          Close Focused Window
 Alt-f:                Toggle Floating Mode
 Alt-t:                Toggle Tiling Mode
