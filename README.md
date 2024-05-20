@@ -83,8 +83,6 @@ Distributed under the BSD-3-CLAUSE License. See [LICENSE](./LICENSE) for more in
 
 Mastodon - [arozx@infosec.exchange](https://infosec.exchange/@arozx)
 
-Email - github@arozx.tech
-
 Project Link: [https://github.com/arozx/dotfiles](https://github.com/arozx/dotfiles)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
