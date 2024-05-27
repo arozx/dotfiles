@@ -1,44 +1,84 @@
 {
-    "workbench.startupEditor": "none",
-    "editor.inlineSuggest.enabled": true,
-    "git.enableSmartCommit": true,
-    "workbench.colorTheme": "Tokyo Night Storm",
-    "git.confirmSync": false,
-    "git.autofetch": true,
-    "window.zoomLevel": 1,
-    "redhat.telemetry.enabled": false,
-    "extensions.ignoreRecommendations": true,
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": true,
-        "markdown": true,
-        "scminput": false
-    },
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter", 
-        "diffEditor.ignoreTrimWhitespace": false,
-        "gitlens.codeLens.symbolScopes": [
-            "!Module"
-        ],
-        "editor.formatOnType": true,
-        "editor.wordBasedSuggestions": false
-    },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "[dart]": {
-        "editor.formatOnSave": true,
-        "editor.formatOnType": true,
-        "editor.rulers": [
-            80
-        ],
-        "editor.selectionHighlight": false,
-        "editor.suggestSelection": "first",
-        "editor.tabCompletion": "onlySnippets",
-        "editor.wordBasedSuggestions": false
-    },
-    "dart.openDevTools": "flutter",
-    "explorer.confirmDragAndDrop": false,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "explorer.confirmDelete": false
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Tokyo Night Storm",
+
+  // Git
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+
+  // Editor
+  "editor.lineNumbers": "interval",
+  "editor.glyphMargin": false,
+  "editor.folding": false,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "workbench.editor.closeOnFileDelete": true,
+  "editor.stickyScroll.enabled": true,
+
+  "liveServer.settings.donotVerifyTags": true,
+  "files.trimTrailingWhitespace": true,
+  "redhat.telemetry.enabled": false,
+  "extensions.ignoreRecommendations": true,
+
+  // Copilot
+
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "dart.openDevTools": "flutter",
+  "explorer.confirmDragAndDrop": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDelete": false,
+  "workbench.iconTheme": "icons",
+  "editor.guides.indentation": false,
+  "editor.minimap.enabled": false,
+
+  // tabs
+  // "workbench.editor.showIcons": false,
+  // "workbench.editor.showTabs": false
+
+  // prettier
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "extensions.experimental.affinity": {
+    "ms-toolsai.jupyter": 1,
+    "ms-toolsai.jupyter-renderers": 1,
+    "ms-python.python": 1,
+    "ms-python.vscode-pylance": 1
+  },
+  "window.zoomLevel": 1,
+  "git.openRepositoryInParentFolders": "always",
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "workbench.statusBar.visible": false,
+  "notebook.output.textLineLimit": 60,
+  "workbench.editor.tabActionCloseVisibility": false,
+  "[dart][python]": {
+    "editor.wordBasedSuggestions": "off"
+  },
+  "gitlens.mode.active": "zen"
 }
