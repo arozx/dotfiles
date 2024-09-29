@@ -105,6 +105,8 @@ static const Key keys[] = {
 	{ Mod4Mask,				XK_Return,			spawn,		SHCMD ("~/scripts/list_keybinds.sh -a") },
 	{ Mod4Mask, 				XK_n,				spawn,		{.v = monitor_off } },
 	{ Mod4Mask,				XK_m,				spawn,		{.v = monitor_on } },
+	{ Mod4Mask,				XK_a,				spawn,		SHCMD ("anki") },
+	{ Mod4Mask,				XK_b,				spawn,		SHCMD ("~/scripts/./rofi-bluetooth.sh") },
 	
 
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
