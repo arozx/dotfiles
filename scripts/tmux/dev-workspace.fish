@@ -17,6 +17,8 @@ set excluded_paths \
     "$HOME/.mozilla" \
     "$HOME/.rustup" \
     "$HOME/.cargo" \
+    "$HOME/idea" \
+    "$HOME/vaults" \
     "$HOME/go"
 
 # Check if tmux is installed
@@ -31,8 +33,8 @@ if not command -v sk > /dev/null
     exit 1
 end
 
-# Build find command with excluded paths
-set find_cmd "find $HOME -type d -not -path \"*/\\.*\""
+# Build find command with excluded paths and a max depth of 4
+set find_cmd "find $HOME -maxdepth 4 -type d -not -path \"*/\\.*\""
 for path in $excluded_paths
     set find_cmd "$find_cmd -not -path \"$path/*\""
 end
@@ -53,7 +55,6 @@ end
 
 # Get the directory name for the session name
 set session_name (basename "$selected_dir" | string replace -ar '[^a-zA-Z0-9]' '_')
-
 
 # Display status message
 printf "%s[INFO]%s Creating tmux session '%s' in '%s'...\n" $color_info $color_reset $session_name $selected_dir
@@ -85,4 +86,4 @@ else
 end
 
 # Attach to the session
-tmux attach -t $session_name
+tmux attach-session -t "$session_name"
