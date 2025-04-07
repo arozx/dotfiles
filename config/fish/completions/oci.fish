@@ -1,0 +1,1 @@
+../fish-oci-completions/oci.fish
