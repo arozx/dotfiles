@@ -38,11 +38,11 @@
 
 This project contains, wallpapers, scripts and  custom configurations for the following programs:
 - Fish
-- Alacritty
-- Wallpapers
-- Dwm
-- ST
+- Tmux
 - Neovim
+- Hyperland
+- Wallpapers
+- ST
 - VSCode
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -66,11 +66,12 @@ You may need to modify some of the scripts to use your chosen browser. The defau
 <!-- USAGE -->
 ## Usage
 
-You can chose to manualy install the configuraions or use the install.sh script.
-
-```sh
-sudo ./install.sh
+Run:
+```bash
+stow -v pkg_name --adopt
 ```
+
+Note: this needs to be ran on each package you want to use such as `nvim` and only needs to be ran once.
 
 <!-- LICENSE -->
 ## License
