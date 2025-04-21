@@ -8,7 +8,7 @@ set color_reset (set_color normal)
 
 # Define excluded paths
 set excluded_paths \
-    "$HOME/node_modules" \
+    "node_modules" \
     "$HOME/.cache" \
     "$HOME/.npm" \
     "$HOME/.local" \
@@ -19,7 +19,13 @@ set excluded_paths \
     "$HOME/.cargo" \
     "$HOME/idea" \
     "$HOME/vaults" \
-    "$HOME/go"
+    "$HOME/go" \
+    "$HOME/wallpapers" \
+    "$HOME/Pictures" \
+    "$HOME/Videos" \
+    "$HOME/3d-printing" \
+    "$HOME/books" \
+    "$HOME/clion-2024.3.2"
 
 # Check if tmux is installed
 if not command -v tmux > /dev/null
@@ -36,7 +42,12 @@ end
 # Build find command with excluded paths and a max depth of 4
 set find_cmd "find $HOME -maxdepth 4 -type d -not -path \"*/\\.*\""
 for path in $excluded_paths
-    set find_cmd "$find_cmd -not -path \"$path/*\""
+    # If the path is node_modules, ignore all node_modules folders recursively
+    if test $path = "node_modules"
+        set find_cmd "$find_cmd -not -path \"*/node_modules\" -not -path \"*/node_modules/*\""
+    else
+        set find_cmd "$find_cmd -not -path \"$path/*\""
+    end
 end
 
 # Use skim (sk) for fuzzy directory selection with native Vim keybindings.
