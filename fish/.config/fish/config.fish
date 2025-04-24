@@ -43,3 +43,10 @@ set -U fish_user_paths $fish_user_paths ~/go/bin
 status is-interactive; and not set -q SSH_AUTH_SOCK; and eval (ssh-agent -c)
 
 oh-my-posh init fish | source
+
+# pnpm
+set -gx PNPM_HOME "/home/glitch/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
