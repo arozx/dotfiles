@@ -37,6 +37,10 @@ alias keygh="eval (ssh-agent -c) && ssh-add ~/.ssh/github"
 
 alias dev-workspace='/home/glitch/scripts/tmux/dev-workspace.fish'
 
+# Pomodoro
+alias wo="pomodoro work"
+alias br="pomodoro break"
+
 set -U fish_user_paths $fish_user_paths ~/go/bin
 
 # Start SSH agent if not running
