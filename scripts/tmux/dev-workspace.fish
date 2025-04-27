@@ -79,17 +79,17 @@ if test $status -ne 0
     tmux send-keys -t $session_name:1 "nvim ." C-m
 
     # Create a second window running a terminal (default shell)
-    tmux new-window -t $session_name:2 -c $selected_dir -n "main term"
+    tmux new-window -t $session_name:2 -c $selected_dir -n "Main term"
 
     # Create a third window running a terminal (default shell)
-    tmux new-window -t $session_name:3 -c $selected_dir -n "long running term"
+    tmux new-window -t $session_name:3 -c $selected_dir -n "Long running term"
 
     # Create a fourth window running htop
     tmux new-window -t $session_name:4 -c $selected_dir -n "htop"
     tmux send-keys -t $session_name:4 "htop" C-m
 
     # Select the first window (nvim) as the active window
-    tmux select-window -t $session_name:0
+    tmux select-window -t $session_name:1
 
     printf "%s[SUCCESS]%s Tmux session '%s' created!\n" $color_success $color_reset $session_name
 else
