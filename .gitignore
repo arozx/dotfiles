@@ -1,3 +1,6 @@
 .vscode
 
 todo
+
+# Mutt
+mutt/.mutt/cache/

@@ -1,0 +1,6 @@
+[Unit]
+Description=Sync mail and update notmuch index
+
+[Service]
+Type=oneshot
+ExecStart=%h/.mutt/sync-and-index.sh

@@ -1,0 +1,21 @@
+IMAPAccount disroot
+Host disroot.org
+User arozx@disroot.org
+PassCmd "~/.mutt/get-email.sh"
+TLSType IMAPS
+AuthMechs LOGIN
+
+IMAPStore disroot-remote
+Account disroot
+
+MaildirStore disroot-local
+Path ~/.mail/disroot/
+Inbox ~/.mail/disroot/INBOX
+Subfolders Verbatim
+
+Channel disroot-inbox
+Far :disroot-remote:
+Near :disroot-local:
+Patterns *
+Create Near
+SyncState *

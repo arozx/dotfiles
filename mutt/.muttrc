@@ -1,0 +1,32 @@
+# SMTP (Sending)
+set smtp_url = "smtp://arozx@disroot.org@disroot.org:587/"
+set smtp_pass = `~/.mutt/get-email.sh`
+set from = "arozx@disroot.org"
+set realname = "arozx"
+
+# General Settings
+set editor = "nvim"
+set charset = "utf-8"
+set move = no
+set imap_keepalive = 300
+set ssl_force_tls = yes
+set ssl_starttls = yes
+set mbox = "+INBOX"
+set sleep_time = 1
+
+# Performance Optimizations
+set sort = "date" # Sort by date (faster than threading)
+unset sort_aux
+unset strict_threads
+unset mark_old # Don't mark old messages unless opened
+
+# Local Maildir view
+set folder = "~/.mail/disroot"
+set spoolfile = "+INBOX"
+set mbox = "+INBOX"
+set record = "+Sent"
+set postponed = "+Drafts"
+
+# notmuch
+macro index,pager \Cs "<shell-escape>notmuch search " "Notmuch search"
+macro index,pager \Ck "<shell-escape>notmuch show " "Notmuch show"

@@ -1,0 +1,10 @@
+[Unit]
+Description=Run mail sync every 10 minutes
+
+[Timer]
+OnBootSec=2m
+OnUnitActiveSec=10m
+Unit=mutt-sync.service
+
+[Install]
+WantedBy=timers.target
