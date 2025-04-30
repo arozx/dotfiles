@@ -14,7 +14,7 @@ function pomodoro
                 case work
                     echo 45m
                 case break
-                    echo 0.01m
+                    echo 10m
             end)
 
             if type -q espeak
