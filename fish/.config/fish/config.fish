@@ -17,33 +17,7 @@ if test -f ~/.cache/ags/user/generated/terminal/sequences.txt
     cat ~/.cache/ags/user/generated/terminal/sequences.txt
 end
 
-alias l="ls -lah"
-alias e=exit
-alias c=clear
-
-alias pamcan=powerpill
-
-# Editor
-alias v=nvim
-alias vi=nvim
-alias vim=nvim
-
-# Git
-alias gs="git status"
-alias gpush="git push"
-alias gpull="git pull"
-alias gc="git commit"
-
-alias keygh="eval (ssh-agent -c) && ssh-add ~/.ssh/github"
-
-alias dev-workspace='/home/glitch/scripts/tmux/dev-workspace.fish'
-
-# Pomodoro
-alias pwork="pomodoro work"
-alias pbreak="pomodoro break"
-
-alias wo="pomodoro work"
-alias br="pomodoro break"
+source ~/.config/fish/aliases.fish
 
 set -U fish_user_paths $fish_user_paths ~/go/bin
 
