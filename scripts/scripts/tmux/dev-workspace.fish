@@ -82,7 +82,7 @@ if test $status -ne 0
     tmux new-window -t $session_name:2 -c $selected_dir -n "Main term"
 
     # Create a third window running a terminal (default shell)
-    tmux new-window -t $session_name:3 -c $selected_dir -n "Long running term"
+    tmux new-window -t $session_name:3 -c $selected_dir -n "Long term"
 
     # Create a fourth window running htop
     tmux new-window -t $session_name:4 -c $selected_dir -n "htop"
