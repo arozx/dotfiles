@@ -39,8 +39,9 @@ alias dev-workspace="/home/glitch/scripts/tmux/dev-workspace.fish"
 
 # Display
 alias res1="xrandr --output HDMI-A-1 --mode 1920x1080 --rate 60"
-alias res1="xrandr --output HDMI-A-1 --mode 2560x1440 --rate 120"
+alias res2="xrandr --output HDMI-A-1 --mode 2560x1440 --rate 144"
 
 # Misc
-alias pamcan=powerpill
+alias pamcan="powerpill"
+alias sudo="doas"
 alias keygh="eval (ssh-agent -c) && ssh-add ~/.ssh/github"
