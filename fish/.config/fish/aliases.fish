@@ -8,6 +8,9 @@ alias l="eza -lah -a --icons=always"
 alias ls="eza -a --icons=always"
 alias ll="eza -al --icons=always"
 alias lt="eza -a --tree --level=1 --icons=always"
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 alias shutdown="systemctl poweroff"
 alias v=nvim
 alias vi=nvim
