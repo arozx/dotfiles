@@ -1,0 +1,4 @@
+set selection-clipboard clipboard
+
+# Theme
+include catppuccin-mocha
