@@ -1,4 +1,4 @@
 #!/bin/bash
 
-mbsync disroot
+mbsync disroot-inbox
 notmuch new
