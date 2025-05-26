@@ -2,16 +2,17 @@
 source ~/.mutt/account.rc
 
 #  Inbox Configuration 
+set folder = "~/.mail/disroot"
+set mbox_type = Maildir
 set my_inbox = "+INBOX"
 set spoolfile = $my_inbox
 set mbox = $my_inbox
 set record = "+Sent"
 set postponed = "+Drafts"
-set folder = "~/.mail/disroot"
 
 #  Mail Sync 
-macro index <F5> "<enter-command>echo Syncing…<enter><shell-escape>~/.mutt/sync-and-index.sh<enter><enter-command>echo Done.<enter>"
-folder-hook $my_inbox 'push "<shell-escape>~/.mutt/sync-and-index.sh\n"'	# Sync on open
+macro index <F5> "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/sync-and-index.sh<enter><enter-command>set wait_key<enter>"
+folder-hook $my_inbox 'push "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/sync-and-index.sh<enter><enter-command>set wait_key<enter>"'
 
 #  Editor & UI 
 set editor = "nvim"
