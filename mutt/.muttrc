@@ -14,6 +14,10 @@ set postponed = "+Drafts"
 macro index <F5> "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/sync-and-index.sh<enter><enter-command>set wait_key<enter>"
 folder-hook $my_inbox 'push "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/sync-and-index.sh<enter><enter-command>set wait_key<enter>"'
 
+#  urlview
+macro index,pager \cu "<pipe-message> urlview<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cu "<pipe-entry> urlview<Enter>" "call urlscan to extract URLs out of a message"
+
 #  Editor & UI 
 set editor = "nvim"
 set charset = "utf-8"
