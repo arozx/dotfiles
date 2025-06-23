@@ -29,6 +29,9 @@ alias gfo="git fetch origin"
 alias gcheck="git checkout"
 alias gcredential="git config credential.helper store"
 
+# Github
+alias gd="gh dash" # https://github.com/dlvhdr/gh-dash (cli for gh pr + issues)
+
 # Pomodoro
 alias pwork="pomodoro work"
 alias wo="pomodoro work"
