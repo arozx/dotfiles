@@ -4,3 +4,5 @@ todo
 
 # Mutt
 mutt/.mutt/cache/
+mutt/.mutt/account.rc
+mutt/.mutt/Disroot
