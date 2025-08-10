@@ -36,7 +36,7 @@ set crypt_autosign = yes            # Sign by default
 set crypt_replysign = yes
 set crypt_replyencrypt = yes
 set crypt_replysignencrypted = yes
-set pgp_sign_as = F9496CF0447C0E40
+set pgp_sign_as = CD33F70BC5280C35A6F8C91F12266DAB926884FB
 
 #  Performance Optimizations 
 set sort = "date"
