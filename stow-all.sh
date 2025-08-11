@@ -9,7 +9,7 @@ for dir in */; do
     [[ "$dir_name" == "walls" ]] && continue
 
     # Skip the keyd
-    [[ "$dir_name" == "keyd" ]] && continue
+    [[ "$dir_name" == "etc" ]] && continue
 
     echo "Stowing: $dir_name"
     stow -v "$dir_name" --adopt
