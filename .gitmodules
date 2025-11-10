@@ -1,6 +1,3 @@
-#[submodule "kitty/.config/kitty/theme"]
-#	path = kitty/.config/kitty/theme
-#	url = git@github.com:arozx/kitty-tokyo-night-storm.git
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = git@github.com:arozx/conf-nvim.git

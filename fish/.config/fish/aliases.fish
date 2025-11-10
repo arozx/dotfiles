@@ -49,6 +49,5 @@ alias res2="xrandr --output HDMI-A-1 --mode 2560x1440 --rate 144"
 
 # Misc
 alias pamcan="powerpill"
-alias sudo="doas"
 alias keygh="eval (ssh-agent -c) && ssh-add ~/.ssh/github"
 alias pip="uv pip"

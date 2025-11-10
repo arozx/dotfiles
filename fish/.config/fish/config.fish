@@ -28,8 +28,6 @@ if status is-interactive
     end
 end
 
-oh-my-posh init fish | source
-
 # pnpm
 set -gx PNPM_HOME "/home/glitch/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
@@ -39,9 +37,9 @@ end
 
 export BROWSER=zen-browser
 
-if not set -q NVIM
-    fastfetch
-end
+#if not set -q NVIM
+#    fastfetch
+#end
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
