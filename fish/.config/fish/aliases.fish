@@ -49,5 +49,6 @@ alias res2="xrandr --output HDMI-A-1 --mode 2560x1440 --rate 144"
 
 # Misc
 alias pamcan="powerpill"
+alias avante='nvim -c "lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)"'
 alias keygh="eval (ssh-agent -c) && ssh-add ~/.ssh/github"
 alias pip="uv pip"
