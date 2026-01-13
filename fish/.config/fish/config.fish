@@ -44,3 +44,6 @@ export BROWSER=zen-browser
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# try
+eval (/usr/bin/try init ~/src/tries | string collect)
