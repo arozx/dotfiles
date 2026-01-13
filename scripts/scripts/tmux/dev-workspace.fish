@@ -40,7 +40,7 @@ if not command -v sk > /dev/null
 end
 
 # Build find command with excluded paths and a max depth of 4
-set find_cmd "find $HOME -maxdepth 4 -type d -not -path \"*/\\.*\""
+set find_cmd "find $HOME -maxdepth 4 -type d -not -path \"*/\""
 for path in $excluded_paths
     # If the path is node_modules, ignore all node_modules folders recursively
     if test $path = "node_modules"
@@ -84,9 +84,9 @@ if test $status -ne 0
     # Create a third window running a terminal (default shell)
     tmux new-window -t $session_name:3 -c $selected_dir -n "Long term"
 
-    # Create a fourth window running lazygit
+    # Create a fourth window for git
     tmux new-window -t $session_name:4 -c $selected_dir -n "git"
-    tmux send-keys -t $session_name:4 "lazygit" C-m
+    tmux send-keys -t $session_name:4 "tig" C-m
 
     # Select the first window (nvim) as the active window
     tmux select-window -t $session_name:1
