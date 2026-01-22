@@ -37,13 +37,12 @@ end
 
 export BROWSER=zen-browser
 
-#if not set -q NVIM
-#    fastfetch
-#end
-
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 # try
 eval (~/.local/try.rb init ~/src/tries | string collect)
+
+# Zoxide (smart cd)
+zoxide init fish | source
