@@ -51,7 +51,11 @@ for path in $excluded_paths
 end
 
 # Use skim (sk) for fuzzy directory selection with native Vim keybindings.
-set selected_dir (eval $find_cmd | sk \
+# Prepend current directory to the list so it appears at the top initially
+set selected_dir (begin
+    echo $PWD
+    eval $find_cmd
+end | sk \
     --bind 'ctrl-d:half-page-down,ctrl-u:half-page-up' \
     --preview 'ls -la {}' \
     --height 80% \
@@ -65,7 +69,8 @@ if test -z "$selected_dir"
 end
 
 # Get the directory name for the session name
-set session_name (basename "$selected_dir" | string replace -ar '[^a-zA-Z0-9]' '_')
+# Use the full path relative to HOME to avoid conflicts with similar directory names
+set session_name (string replace $HOME "" "$selected_dir" | string replace -a "/" "_" | string trim -c "_")
 
 # Display status message
 printf "%s[INFO]%s Creating tmux session '%s' in '%s'...\n" $color_info $color_reset $session_name $selected_dir
