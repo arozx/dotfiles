@@ -52,6 +52,19 @@
   margin-right: 13px;
 }
 
+#custom-syncthing {
+  margin-right: 12px;
+}
+
+#custom-syncthing.disconnected,
+#custom-syncthing.error {
+  color: #a55555;
+}
+
+#custom-syncthing.partial {
+  color: #d0a85c;
+}
+
 #custom-expand-icon {
   margin-right: 18px;
 }

@@ -10,6 +10,7 @@
     "group/tray-expander",
     "bluetooth",
     "network",
+    "custom/syncthing",
     "pulseaudio",
     "cpu",
     "battery"
@@ -84,6 +85,13 @@
     "interval": 3,
     "spacing": 1,
     "on-click": "omarchy-launch-wifi"
+  },
+  "custom/syncthing": {
+    "exec": "/home/glitch/dotfiles/waybar/.config/waybar/scripts/syncthing-status.sh",
+    "return-type": "json",
+    "interval": 30,
+    "tooltip": true,
+    "on-click": "omarchy-launch-floating-terminal-with-presentation /home/glitch/dotfiles/waybar/.config/waybar/scripts/syncthing-dashboard.sh"
   },
   "battery": {
     "format": "{capacity}% {icon}",
