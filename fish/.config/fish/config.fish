@@ -46,3 +46,6 @@ eval (~/.local/try.rb init ~/src/tries | string collect)
 
 # Zoxide (smart cd)
 zoxide init fish | source
+
+# Added by Antigravity CLI installer
+fish_add_path "$HOME/.local/bin"

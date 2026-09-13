@@ -32,14 +32,6 @@ alias gcredential="git config credential.helper store"
 # Github
 alias gd="gh dash" # https://github.com/dlvhdr/gh-dash (cli for gh pr + issues)
 
-# Pomodoro
-alias pwork="pomodoro work"
-alias wo="pomodoro work"
-alias pw="pomodoro work"
-alias pbreak="pomodoro break"
-alias br="pomodoro break"
-alias pb="pomodoro break"
-
 # Scripts
 alias dev-workspace="/home/glitch/scripts/tmux/dev-workspace.fish"
 

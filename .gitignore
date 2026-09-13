@@ -2,6 +2,11 @@
 
 todo
 
+# Generated local state and application backups
+nvim.log
+fish/.config/fish/fish_variables*
+hypr/.config/hypr/*.bak.*
+
 # Mutt
 mutt/.mutt/cache/
 mutt/.mutt/account.rc
