@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch the repository workspace
+
+[Path]
+PathChanged=/home/glitch/src
+Unit=repo-sync.service
+
+[Install]
+WantedBy=default.target

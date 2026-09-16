@@ -1,0 +1,8 @@
+[Unit]
+Description=Refresh repository inventory and development environments
+
+[Service]
+Type=oneshot
+Environment=REPO_ROOT=/home/glitch/src
+Environment=REPO_MANIFEST=/home/glitch/src/repos.tsv
+ExecStart=/home/glitch/.nix-profile/bin/repo-sync
