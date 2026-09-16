@@ -7,9 +7,7 @@ function fish_prompt -d "Write out the prompt"
 end
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
     set fish_greeting
-
 end
 
 starship init fish | source
@@ -19,13 +17,10 @@ end
 
 source ~/.config/fish/aliases.fish
 
-set -U fish_user_paths $fish_user_paths ~/go/bin
+fish_add_path --path ~/go/bin ~/bin
 
-# Start SSH agent if not running
-if status is-interactive; and test -f ~/.ssh/id_ed25519
-    if not set -q SSH_AUTH_SOCK
-        eval (ssh-agent -c) && ssh-add ~/.ssh/id_ed25519
-    end
+if type -q direnv
+    direnv hook fish | source
 end
 
 # pnpm
