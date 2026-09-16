@@ -22,9 +22,9 @@ source ~/.config/fish/aliases.fish
 set -U fish_user_paths $fish_user_paths ~/go/bin
 
 # Start SSH agent if not running
-if status is-interactive
+if status is-interactive; and test -f ~/.ssh/id_ed25519
     if not set -q SSH_AUTH_SOCK
-        eval (ssh-agent -c) && ssh-add ~/.ssh/github
+        eval (ssh-agent -c) && ssh-add ~/.ssh/id_ed25519
     end
 end
 
@@ -42,7 +42,9 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 # try
-eval (~/.local/try.rb init ~/src/tries | string collect)
+if test -x ~/.local/try.rb
+    eval (~/.local/try.rb init ~/src/tries | string collect)
+end
 
 # Zoxide (smart cd)
 zoxide init fish | source
